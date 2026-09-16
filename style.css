@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: 2.5em;
+    color: #764ba2;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-out;
+}
+
+.name {
+    font-size: 2em;
+    color: #ff69b4;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.birthday-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.date {
+    font-size: 1.5em;
+    color: #764ba2;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.age {
+    font-size: 1.8em;
+    color: #ff69b4;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.countdown {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+}
+
+.countdown p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.time-unit {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.time-unit span {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.time-unit p {
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.message-box {
+    background: #fff9fb;
+    border-left: 4px solid #ff69b4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.message-box h3 {
+    color: #ff69b4;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.message-content {
+    color: #333;
+    line-height: 1.8;
+}
+
+.message-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.signature {
+    font-style: italic;
+    font-weight: bold;
+    color: #764ba2;
+    text-align: right !important;
+    margin-top: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #ff69b4;
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+}
+
+/* Hearts animation */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #ff69b4;
+    opacity: 0.3;
+    animation: float 8s infinite ease-in;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 25%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+    left: 75%;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(5) {
+    left: 90%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% {
+        bottom: -50px;
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+/* Stars */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite;
+}
+
+.star:nth-child(1) {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(3) {
+    top: 40%;
+    left: 85%;
+    animation-delay: 2s;
+}
+
+.star:nth-child(4) {
+    top: 70%;
+    left: 20%;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(5) {
+    top: 30%;
+    left: 50%;
+    animation-delay: 2.5s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .content {
+        padding: 25px 20px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .name {
+        font-size: 1.5em;
+    }
+
+    .countdown-timer {
+        gap: 5px;
+    }
+
+    .time-unit {
+        padding: 8px 10px;
+    }
+
+    .time-unit span {
+        font-size: 1.2em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
